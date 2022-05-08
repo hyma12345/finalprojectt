@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: mywebimg
+  name: webapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mywebimg
+  strategy: 
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mywebimg
+    spec:
+      containers:
+      - image: seetha317/mywebimg
+        name: webapp
+        resources: {}
+status: {}
+
